@@ -1,0 +1,105 @@
+button {
+    background: blue;
+    color: white;
+    padding: 10px 20px;
+    transition: background 0.5s linear;
+}
+
+button:hover {
+    background: red;
+}
+
+/* 
+    Transition = hiệu ứng khi một thuộc tính thay đổi (thường là hover, focus).
+*/
+/* 
+
+        .element {
+                        transition: property duration timing-function delay;
+                }
+            property: thuộc tính cần hiệu ứng (vd: background, transform).
+            duration: thời gian (vd: 0.5s).
+            timing-function: tốc độ (linear, ease, ease-in-out, cubic-bezier).
+            delay: trễ (optional).
+*/
+/* level 2 */
+
+/* Khi cần tạo hiệu ứng lặp lại/phức tạp, dùng @keyframes. */
+/* @keyframes name {
+    0% {
+        ...
+    }
+
+    50% {
+        ...
+    }
+
+    100% {
+        ...
+    }
+}
+
+.element {
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+} */
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+h1 {
+    animation: bounce 1s infinite;
+}
+
+/* học  */
+@keyframes move {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(200px);
+    }
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: orange;
+    animation: move 2s linear infinite alternate;
+}
+
+/* tôi tự làm  */
+
+
+@keyframes moves {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(500px);
+    }
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: black;
+    animation: moves 1s linear infinite alternate;
+}
+
+.box1 {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}

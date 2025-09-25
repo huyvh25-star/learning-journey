@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Keyframes nhiều mốc</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #111;
+            font-family: sans-serif;
+        }
+
+        .text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            animation: crazyMove 5s ease-in-out infinite;
+        }
+
+        @keyframes crazyMove {
+            0% {
+                transform: translateX(0) translateY(0);
+                color: #fff;
+            }
+
+            20% {
+                transform: translateX(100px);
+                color: #ff0057;
+            }
+
+            40% {
+                transform: translateX(100px) translateY(50px);
+                color: #fffb00;
+            }
+
+            60% {
+                transform: translateX(-50px) translateY(50px);
+                color: #00ff62;
+            }
+
+            80% {
+                transform: translateX(-50px) translateY(-30px);
+                color: #00cfff;
+            }
+
+            100% {
+                transform: translateX(0) translateY(0);
+                color: #fff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text">✨ Hello Keyframes! ✨</div>
+</body>
+
+</html>

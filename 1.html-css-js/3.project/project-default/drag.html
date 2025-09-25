@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop Demo</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            border: 2px dashed #888;
+            display: inline-block;
+            margin: 20px;
+            vertical-align: top;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            margin: auto;
+            cursor: grab;
+        }
+
+        .over {
+            border-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box1">
+        <div class="item" draggable="true"></div>
+    </div>
+    <div class="box" id="box2"></div>
+
+    <script>
+        const item = document.querySelector(".item");
+        const boxes = document.querySelectorAll(".box");
+
+        item.addEventListener("dragstart", () => {
+            item.classList.add("dragging");
+        });
+
+        item.addEventListener("dragend", () => {
+            item.classList.remove("dragging");
+        });
+
+        boxes.forEach(box => {
+            box.addEventListener("dragover", e => {
+                e.preventDefault(); // cho phép thả
+                box.classList.add("over");
+            });
+
+            box.addEventListener("dragleave", () => {
+                box.classList.remove("over");
+            });
+
+            box.addEventListener("drop", () => {
+                box.classList.remove("over");
+                box.appendChild(item); // di chuyển item vào box
+            });
+        });
+    </script>
+</body>
+
+</html>

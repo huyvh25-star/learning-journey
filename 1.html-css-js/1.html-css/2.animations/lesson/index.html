@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Hiệu ứng</h1>
+    <button>Save</button>
+    <div class="box">box1</div>
+    <div class="circle">
+    </div>
+    <div class="box1">
+
+    </div>
+    <button id="move">Tiến lên</button>
+    <button id="back">Lùi lại</button>
+
+    <script>
+        let box = document.querySelector(".box1");
+        let increse = 0; // bắt đầu ở 0
+
+        document.addEventListener("keydown", function (e) {
+            console.log("i : ", e.key);
+
+            if (e.key === "ArrowRight") {      // mũi tên phải
+                increse += 100;
+                box.style.transform = `translateX(${increse}px)`;
+            }
+            else if (e.key === "ArrowLeft") {  // mũi tên trái
+                increse -= 100;
+                box.style.transform = `translateX(${increse}px)`;
+            }
+            else if (e.key === "ArrowUp") {  // mũi tên trái
+                increse += 100;
+                box.style.transform = `translateY(${increse}px)`;
+            }
+            else if (e.key === "ArrowDown") {  // mũi tên trái
+                increse -= 100;
+                box.style.transform = `translateY(${increse}px)`;
+            }
+        });
+    </script>
+</body>
+
+</html>

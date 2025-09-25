@@ -1,0 +1,39 @@
+/* 
+    1. Hiểu CSS Variable (Custom Properties)
+    Khái niệm:
+        CSS variable là biến số mà bạn định nghĩa trong CSS.
+        Đặt tên với tiền tố -- (vd: --main-color).
+        Dùng var(--tên-biến) để gọi.
+ */
+/* :root = nơi khai báo toàn cục (global), có hiệu lực toàn bộ website. */
+:root {
+    /* biến trong root là biến toàn cục  dùng ở mọi nơi */
+    --main-color: #a54242;
+    --text-color: #333;
+}
+
+h1 {
+    color: var(--text-color);
+}
+
+.card {
+    --card-bg: #f1f1f1;
+    /* biến chỉ dùng trong .card => đây là biến cục bộ chỉ dùng được bên trong .card */
+    background-color: var(--card-bg);
+    width: 200px;
+}
+
+:root {
+    --bg: white;
+    --text: black;
+}
+/* gán lại cho biến  */
+.dark {
+    --bg: #222;
+    --text: white;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
